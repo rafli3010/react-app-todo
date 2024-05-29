@@ -1,15 +1,27 @@
-import React from "react";
-import TodoItem from "./TodoItem"; // Lakukan import
+import TodoItem from "./TodoItem";
 
-const Todos = ({ todos }) => {
+// Menerima function toggleCompleted sebagai sebuah prop
+const Todos = ({ todos, toggleCompleted }) => {
   return (
-    <div>
-      {todos.map((todo) => {
-        // Berikan datanya ke TodoItem
-        return <TodoItem key={todo.id} todo={todo} />;
-      })}
+    <div style={styles.container}>
+      {todos.map((todo) => (
+        <TodoItem
+          key={todo.id}
+          todo={todo}
+          // Teruskan function toggleCompleted ke component TodoItem
+          toggleCompleted={toggleCompleted}
+        />
+      ))}
     </div>
   );
+};
+
+const styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
 };
 
 export default Todos;
