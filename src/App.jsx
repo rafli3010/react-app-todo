@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Todos from "./components/Todos";
+import TodoForm from "./components/TodoForm";
 
 function App() {
   const [todos, setTodos] = useState([
     {
       id: 1,
       title: "Finish Progate React Course",
-      completed: true, // Mengganti nilai awal ke true
+      completed: true,
     },
     {
       id: 2,
@@ -20,9 +21,6 @@ function App() {
     },
   ]);
 
-  console.log(todos);
-
-  // Definisikan toggleCompleted di sini (hapus duplikat lainnya)
   const toggleCompleted = (todoId) => {
     const updatedTodos = todos.map((todo) => {
       if (todo.id === todoId) {
@@ -33,11 +31,29 @@ function App() {
     setTodos(updatedTodos);
   };
 
+  const addTodo = (title) => {
+    const newTodo = {
+      id: Date.now(),
+      title: title,
+      completed: false,
+    };
+    setTodos([...todos, newTodo]);
+  };
+
+  const deleteTodo = (todoId) => {
+    const updatedTodos = todos.filter((todo) => todo.id !== todoId);
+    setTodos(updatedTodos);
+  };
+
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>My Todo List</h1>
-      {/* Teruskan function toggleCompleted ke component Todos */}
-      <Todos todos={todos} toggleCompleted={toggleCompleted} />
+      <TodoForm addTodo={addTodo} />
+      <Todos
+        todos={todos}
+        toggleCompleted={toggleCompleted}
+        deleteTodo={deleteTodo}
+      />
     </div>
   );
 }
