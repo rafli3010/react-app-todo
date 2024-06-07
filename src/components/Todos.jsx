@@ -20,6 +20,8 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    width: "100%",
+    padding: "20px 0",
   },
 };
 

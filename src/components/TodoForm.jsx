@@ -31,6 +31,7 @@ const TodoForm = ({ addTodo }) => {
 
 const styles = {
   container: {
+    marginTop: "40px",
     marginBottom: "32px",
     textAlign: "center",
   },
@@ -39,11 +40,22 @@ const styles = {
     width: "70%",
     fontSize: "16px",
     padding: "0 16px",
+    border: "2px solid #ccc",
+    borderRadius: "4px",
+    outline: "none",
+    transition: "border-color 0.3s",
   },
   button: {
     height: "46px",
     fontSize: "16px",
     marginLeft: "10px",
+    padding: "0 16px",
+    backgroundColor: "#007bff",
+    color: "#fff",
+    border: "none",
+    borderRadius: "4px",
+    cursor: "pointer",
+    transition: "background-color 0.3s",
   },
 };
 
