@@ -60,10 +60,20 @@ function App() {
 
 const styles = {
   container: {
+    maxWidth: "1000px",
+    margin: "0 auto",
     padding: "20px",
+    backgroundColor: "white",
+    borderRadius: "8px",
+    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+    backgroundImage: "linear-gradient(to right, #fbc2eb, #a6c1ee)",
   },
   title: {
     textAlign: "center",
+    color: "#333",
+    fontFamily: "'Roboto', sans-serif",
+    fontSize: "2rem",
+    margin: "20px 0",
   },
 };
 
